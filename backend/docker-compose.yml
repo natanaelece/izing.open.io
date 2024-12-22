@@ -1,6 +1,5 @@
 services:
   redis:
-    container_name: "redis"
     image: "redis:alpine"
     restart: always
     command: redis-server --appendonly yes --replica-read-only no
@@ -24,7 +23,6 @@ services:
   postgres:
     image: "bitnami/postgresql:14"
     restart: always
-    container_name: "pg"
     env_file:
       - ./.env
     extra_hosts:
@@ -39,7 +37,6 @@ services:
   rabbitmq:
     image: rabbitmq:3-management
     hostname: rabbitmq
-    container_name: "rabbitmq"
     restart: always
     env_file:
       - ./.env
@@ -55,7 +52,6 @@ services:
       context: .
       dockerfile: ./Dockerfile
     restart: always
-    container_name: "api"
     env_file:
       - ./.env
     stdin_open: true
