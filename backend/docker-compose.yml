@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   # redis:  REMOVIDO POIS VOCÊ USARÁ UM EXTERNO
   #  container_name: "redis"
